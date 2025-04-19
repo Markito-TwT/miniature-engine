@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .text{
+            color: aliceblue;
+
+        }
+        .botao{
+            color: rgb(0, 0, 0);
+            background-color: aliceblue;
+            font-size: 20px;
+            text-align: center;
+            text-decoration: solid;
+
+        
+        }
+        .title{
+            text-align: center;
+            font-size: 70px;
+        }
+        #relogio {
+            font-size: 48px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #ffffff;
+            background-color: rgb(0, 0, 0);
+            padding: 20px;
+            width: fit-content;
+            border-radius: 10px;
+        }
+    </style>
+     <div class="text">
+</head>
+<div class="botao">
+<div class="link">
+<a href="home_formulario.html"> <button>Login</button></a>
+<a href="ecola.html"> <button>Formulario da Escola</button></a>
+<a href="preços.html"> <button>Preço da mensalidades</button></a>
+</div>
+</div>
+<br><br><br><br><br><br><br><br>
+<h1 class="title">Home</h1>
+<div id="relogio">00:00:00</div>
+
+<body>
+</div>
+<script>
+    function atualizarRelogio() {
+        const agora = new Date();
+        const horas = agora.getHours().toString().padStart(2, '0');
+        const minutos = agora.getMinutes().toString().padStart(2, '0');
+        const segundos = agora.getSeconds().toString().padStart(2, '0');
+
+        const horaAtual = `${horas}:${minutos}:${segundos}`;
+        document.getElementById('relogio').textContent = horaAtual;
+    }
+
+    // Atualiza o relógio a cada segundo
+    setInterval(atualizarRelogio, 1000);
+
+    // Atualiza imediatamente ao carregar a página
+    atualizarRelogio();
+</script>
+</body>
+</html>
